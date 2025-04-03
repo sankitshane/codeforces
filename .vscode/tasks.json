@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build, Run, and Cleanup",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c",
+                "clang++ -std=c++17 ${file} -o ${fileDirname}/${fileBasenameNoExtension} && ${fileDirname}/${fileBasenameNoExtension} < ${fileDirname}/input.txt > ${fileDirname}/output.txt && rm -f ${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
